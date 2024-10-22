@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .movie-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .movie-card h3 {
+            font-size: 1.5em;
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .movie-card p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .movie-card button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .movie-card button:hover {
+            background-color: #0056b3;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-10px);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="movie-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0MXZqU0TWkycp_PrIYJ7UOTlDzV3o-vJE-A&s" alt="Doctor Strange 2">
+            <h3>Doctor Strange 2</h3>
+            <p>Rating: 4.5</p>
+            <button>Book now</button>
+        </div>
+
+        <div class="movie-card">
+            <img src="https://m.media-amazon.com/images/M/MV5BMzVmYjQwMWMtMTEwNS00ZDcwLWIzOGYtYTc5YTI4YTQzOGZlXkEyXkFqcGc@._V1_.jpg" alt="Bhool Bhulaiyaa 2">
+            <h3>Bhool Bhulaiyaa 2</h3>
+            <p>Rating: 4.5</p>
+            <button>Book now</button>
+        </div>
+
+        <div class="movie-card">
+            <img src="https://m.media-amazon.com/images/M/MV5BZDk0M2VjNDMtOWI1OC00ZWY3LWIyM2YtZDdjNDQ1MzkzODM1XkEyXkFqcGc@._V1_.jpg" alt="Jayeshbhai Jordaar">
+            <h3>Jayeshbhai Jordaar</h3>
+            <p>Rating: 4.5</p>
+            <button>Book now</button>
+        </div>
+
+        <div class="movie-card">
+            <img src="https://m.media-amazon.com/images/M/MV5BZGExMWU2NWMtNzczYi00NjQ4LTk2YzctZGZkYmRmMDdhMjllXkEyXkFqcGc@._V1_.jpg" alt="Jurassic World">
+            <h3>Jurassic World</h3>
+            <p>Rating: 4.5</p>
+            <button>Book now</button>
+        </div>
+
+        <div class="movie-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPZHH2vH2V_2DmsWRrp-pldvMnRJ65rF_--Q&s" alt="KGF2">
+            <h3>KGF2</h3>
+            <p>Rating: 4.5</p>
+            <button>Book now</button>
+        </div>
+
+        <div class="movie-card">
+            <img src="https://static.toiimg.com/thumb/msid-89043434,width-400,resizemode-4/89043434.jpg" alt="RRR">
+            <h3>RRR</h3>
+            <p>Rating: 4.5</p>
+            <button>Book now</button>
+        </div>
+    </div>
+
+</body>
+</html>
