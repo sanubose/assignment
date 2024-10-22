@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation__Bar</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0b1741;
+            padding: 10px 20px;
+            color: #fff;
+        }
+
+        .navbar-left .logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #a3e0fd;
+        }
+
+        .navbar-right a {
+            margin-left: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-right a:hover {
+            color: #a3e0fd;
+        }
+
+        .new-badge {
+            background-color: #ffeb3b;
+            color: #000;
+            font-size: 12px;
+            border-radius: 5px;
+            padding: 2px 6px;
+            margin-left: 5px;
+        }
+
+        .signup-btn {
+            background-color: #0066ff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            margin-left: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-btn:hover {
+            background-color: #0052cc;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            color: #000;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown a {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <span class="logo">Newton School</span>
+        </div>
+        <div class="navbar-right">
+            <a href="#">Data Science & AI</a>
+            <a href="#">B. Tech in CS & AI <span class="new-badge">NEW</span></a>
+            <a href="#">Newton Edge</a>
+            <a href="#">Refer & Earn</a>
+            <div class="dropdown">
+                <a href="#">More</a>
+                <div class="dropdown-content">
+                    <a href="#">Option 1</a>
+                    <a href="#">Option 2</a>
+                </div>
+            </div>
+            <button class="signup-btn">Sign up</button>
+        </div>
+    </nav>
+</body>
+</html>
