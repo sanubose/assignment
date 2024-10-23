@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card_Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .card {
+            display: flex;
+            border: 2px dotted black;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f0e68c; /* Yellow background */
+            border-radius: 5px;
+        }
+
+        .image {
+            width: 150px;
+            height: 100px;
+            background-color: #00f; /* Blue color for the image */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px dotted black;
+            margin-right: 20px;
+        }
+
+        .content {
+            flex: 1;
+            border: 1px dotted black;
+            padding: 10px;
+            background-color: #e0e0e0;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .read-more {
+            color: blue;
+            text-decoration: underline;
+            margin-top: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="image">Image</div>
+            <div class="content">
+                <h2 class="title">Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vero deleniti incidunt rem.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image">Image</div>
+            <div class="content">
+                <h2 class="title">Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vero deleniti incidunt rem.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
+        </div>
+
+        
+		<div class="card">
+            <div class="image">Image</div>
+            <div class="content">
+                <h2 class="title">Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vero deleniti incidunt rem.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
+		</div>
+			
+			<div class="card">
+                <div class="image">Image</div>
+                <div class="content">
+                <h2 class="title">Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vero deleniti incidunt rem.</p>
+                <a href="#" class="read-more">Read more</a>
+            </div>
+        </div>
+			
+			
+        
+    </div>
+</body>
+</html>

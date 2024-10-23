@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Grid Layout</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      grid-template-rows: repeat(2, 200px);  /* 2 rows */
+      gap: 10px;
+      width: 600px;  /* Overall width of the grid */
+      height: 420px; /* Overall height of the grid */
+      background-color: #a18ba7;
+    }
+
+    .grid-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      color: black;
+      border: 1px solid black;
+    }
+
+    /* Specific item styles */
+    .item1 { background-color: #0000ff; grid-column: 1; grid-row: 2; }
+    .item4 { background-color: #ff5733; grid-column: 1 / 3; grid-row: 1; }
+    .item5 { background-color: #a65a43; grid-column: 2; grid-row: 2; }
+    .item6 { background-color: #ffb3b3; grid-column: 3 / 4; grid-row: 1 / 3; }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="grid-item item1">1</div>
+    <div class="grid-item item4">4</div>
+    <div class="grid-item item5">5</div>
+    <div class="grid-item item6">6</div>
+  </div>
+</body>
+</html>
