@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Navbar & Form</title>
+    
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar-logo span {
+            color: red;
+        }
+
+        .navbar-menu {
+            display: flex;
+            gap: 30px;
+            list-style-type: none;
+        }
+
+        .navbar-menu li {
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .navbar-menu li:hover {
+            text-decoration: underline;
+        }
+
+        .login-btn {
+            padding: 10px 20px;
+            border: 2px solid red;
+            border-radius: 20px;
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: red;
+            color: white;
+        }
+
+        /* Main Content */
+        .content {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .content h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Form and Information section */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .left-section {
+            width: 50%;
+        }
+
+        .left-section h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .left-section ul {
+            list-style: none;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .right-section {
+            width: 45%;
+            padding-left: 30px;
+        }
+
+        .right-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #e50914;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #d40813;
+        }
+
+        .captcha {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .captcha input {
+            margin-right: 10px;
+        }
+
+        /* Job Roles Section */
+        .roles-section {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .roles-section h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .tabs div {
+            cursor: pointer;
+            padding: 5px 10px;
+            color: #000;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tabs .active {
+            border-bottom: 2px solid red;
+            color: red;
+        }
+
+        .roles-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .role {
+            padding: 10px 20px;
+            background-color: #f0f1ff;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #666;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .role:hover {
+            background-color: #e0e1ff;
+            color: #000;
+        }
+
+        /* Benefits Section */
+        .benefits-container {
+            background-color: #f5ebe2;
+            padding: 40px;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .benefit {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 180px;
+        }
+
+        .benefit p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .cta-button {
+            display: block;
+            margin: 0 auto;
+            background-color: #ff3b3f;
+            color: #fff;
+            text-align: center;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Footer */
+        footer {
+            color: #ffffff;
+            background-color: #181818;
+            padding: 20px 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .offline-campuses {
+            text-align: center;
+        }
+
+        .campus-icons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .campus {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+            filter: invert(100%);
+            transition: transform 0.2s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+		
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="navbar-logo">masai<span>.</span></div>
+
+        <!-- Menu -->
+        <ul class="navbar-menu">
+            <li>COURSES <span class="dropdown-arrow">▼</span></li>
+            <li>FEES</li>
+            <li>ABOUT US</li>
+            <li>EVENTS</li>
+            <li>CONTESTS</li>
+            <li>FAQ</li>
+        </ul>
+
+        <!-- Login Button -->
+        <button class="login-btn">LOGIN</button>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Hire Masai Graduates</h1>
+        <p>Become a part of the top companies in technology that already hired our graduates for their engineering teams.</p>
+    </div>
+
+    <!-- Form and Information Section -->
+    <div class="container">
+        <div class="left-section">
+            <h1>Find your best fit in our graduates</h1>
+            <ul>
+                <li>Lay down your talent requirements with us</li>
+                <li>Choose from the pool of our graduates</li>
+                <li>Review profile and portfolio</li>
+                <li>Hire the candidate best-suited for your team</li>
+            </ul>
+        </div>
+        <div class="right-section">
+            <h2>Learn more about hiring</h2>
+            <form action="#" method="POST">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <label for="email">Work E-mail</label>
+                <input type="email" id="email" name="email" placeholder="Enter email" required>
+
+                <label for="phone">Business phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+
+                <label for="designation">Designation</label>
+                <input type="text" id="designation" name="designation" placeholder="Eg. HR head" required>
+
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Enter company name" required>
+
+                <div class="captcha">
+                    <input type="checkbox" id="not-robot" name="not-robot" required>
+                    <label for="not-robot">I'm not a robot</label>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+	
+	<h1>Here are some of the job roles we can assist you with</h1>
+
+    <!-- Tab Navigation -->
+    <div class="tabs">
+        <div>DEVELOPMENT</div>
+        <div class="active">DESIGN</div>
+        <div>ANALYTICS</div>
+    </div>
+
+    <!-- Roles under Design tab -->
+    <div class="roles-container">
+        <div class="role">UI Designer</div>
+        <div class="role">Product Designer</div>
+        <div class="role">UI UX Designer</div>
+        <div class="role">UX Researcher</div>
+        <div class="role">Visual Designer</div>
+        <div class="role">Interaction Designer</div>
+        <div class="role">Motion Designer</div>
+        <div class="role">UX Designer</div>
+    </div>
+	
+	<h1>Why hire from us?</h1>
+
+    <div class="benefits-container">
+        <div class="benefit">
+            <img src="https://via.placeholder.com/40" alt="Coding Icon">
+            <p>1200+ hours of coding experience</p>
+        </div>
+        <div class="benefit">
+            <img src="https://via.placeholder.com/40" alt="Soft Skills Icon">
+            <p>100 hours of soft skills training</p>
+        </div>
+        <div class="benefit">
+            <img src="https://via.placeholder.com/40" alt="Collaboration Icon">
+            <p>Inter & intra team collaboration skills</p>
+        </div>
+        <div class="benefit">
+            <img src="https://via.placeholder.com/40" alt="Communication Icon">
+            <p>Strong communication skills</p>
+        </div>
+        <div class="benefit">
+            <img src="https://via.placeholder.com/40" alt="Skill Development Icon">
+            <p>Wholistic Skill Development</p>
+        </div>
+        <div class="benefit">
+            <img src="https://via.placeholder.com/40" alt="No Hiring Charges Icon">
+            <p>No Hiring Charges</p>
+        </div>
+    </div>
+
+    <!-- Call to action button -->
+    <a href="#" class="cta-button">APPLY NOW FOR FREE</a>
+       <footer>
+        <div class="footer-content">
+            <div class="left-section">
+                <ul>
+                    <li><a href="#">Masai Alumni</a></li>
+                    <li><a href="#">Glide Program</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Masai Referral Program</a></li>
+                </ul>
+            </div>
+            <div class="middle-section">
+                <ul>
+                    <li><a href="#">Hire from us</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Masai Blog</a></li>
+                </ul>
+            </div>
+            <div class="right-section">
+                <ul>
+                    <li><a href="#">Masai Team</a></li>
+                    <li><a href="#">We are Hiring!</a></li>
+                    <li><a href="#">Become Industry Mentor</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="offline-campuses">
+                <p>Masai School #Offline Campuses</p>
+                <div class="campus-icons">
+                    <div class="campus"><span>Bangalore</span></div>
+                    <div class="campus"><span>Pune</span></div>
+                    <div class="campus"><span>Patna</span></div>
+                    <div class="campus"><span>Indore</span></div>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="github-icon.png" alt="GitHub"></a>
+                <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+            </div>
+        </div>
+    </footer>
+	
+	
+	
+
+</body>
+</html>
