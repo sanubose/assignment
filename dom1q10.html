@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analyzer Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Text Analyzer Tool</h1>
+
+<textarea id="textInput" rows="5" cols="50" placeholder="Type or paste your text here..."></textarea>
+
+<div>
+    <button class="button" id="wordCountBtn">Count Words</button>
+    <button class="button" id="toUppercaseBtn">To Uppercase</button>
+    <button class="button" id="toLowercaseBtn">To Lowercase</button>
+    <button class="button" id="checkSubstringBtn">Check Substring</button>
+</div>
+
+<div id="result">Result will appear here.</div>
+
+<script>
+    // Function to count words
+    function countWords(text) {
+        let words = text.trim().split(/\s+/);
+        return words[0] === "" ? 0 : words.length;
+    }
+
+    // Function to convert text to uppercase
+    function toUppercase(text) {
+        return text.toUpperCase();
+    }
+
+    // Function to convert text to lowercase
+    function toLowercase(text) {
+        return text.toLowerCase();
+    }
+
+    // Function to check for a substring
+    function checkSubstring(text) {
+        let substring = prompt("Enter the substring to check:");
+        return text.includes(substring) ? The text contains "${substring}". : The text does not contain "${substring}".;
+    }
+
+    // Higher-order function to handle events
+    function handleEvent(buttonId, callback) {
+        document.getElementById(buttonId).addEventListener('click', () => {
+            let text = document.getElementById("textInput").value;
+            let result = callback(text);
+            document.getElementById("result").innerText = result;
+        });
+    }
+
+    // Setting up event listeners for each button
+    handleEvent("wordCountBtn", (text) => Word Count: ${countWords(text)});
+    handleEvent("toUppercaseBtn", (text) => Uppercase: ${toUppercase(text)});
+    handleEvent("toLowercaseBtn", (text) => Lowercase: ${toLowercase(text)});
+    handleEvent("checkSubstringBtn", (text) => checkSubstring(text));
+
+</script>
+
+</body>
+</html>
