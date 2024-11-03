@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Diwali</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <style>
+        .red-text {
+            font-family: 'Pacifico', cursive;
+            color: red;
+            font-size: 70px;
+            text-align: center;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-image: url("http://santhosh.comxa.com/dsm/moonlight.jpg");
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .container-fluid, .footer {
+            text-align: center;
+        }
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Ensure the audio file is a direct URL to an mp3 file -->
+    <audio type="audio/mpeg" id="audio1" src="https://cdn.pixabay.com/audio/2022/03/17/audio_b3c5c1f819.mp3"></audio>
+    <div class="container-fluid">
+        <h1 class="red-text">Happy Diwali</h1>
+        <!-- Play audio and start fireworks on button click -->
+        <button style="background-color: rgb(42, 145, 39); color: white;" onclick="startFireworks()">Click to Start Celebrations</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function startFireworks() {
+            var audio = document.getElementById('audio1');
+            audio.play(); // Play audio on user click
+            new Fireworks();
+        }
+
+        var Fireworks = function() {
+            var self = this;
+            var rand = function(rMi, rMa) {
+                return ~~((Math.random() * (rMa - rMi + 1)) + rMi);
+            };
+            window.requestAnimFrame = function() {
+                return window.requestAnimationFrame || window.webkitRequestAnimationFrame || 
+                       window.mozRequestAnimationFrame || function(a) { window.setTimeout(a, 1E3 / 60); };
+            }();
+
+            self.init = function() {
+                self.canvas = document.createElement('canvas');
+                self.canvas.width = self.cw = $(window).innerWidth();
+                self.canvas.height = self.ch = $(window).innerHeight();
+                self.particles = [];
+                self.fireworks = [];
+                self.mx = self.cw / 2;
+                self.my = self.ch / 2;
+                $(document.body).append(self.canvas);
+                self.ctx = self.canvas.getContext('2d');
+                self.bindEvents();
+                self.canvasLoop();
+                self.canvas.onselectstart = function() { return false; };
+            };
+
+            self.createParticles = function(x, y, hue) {
+                var audio = document.getElementById('audio1');
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.currentTime = 0;
+                }
+                for (var i = 0; i < 150; i++) {
+                    self.particles.push({
+                        x: x, y: y, coordLast: [{x: x, y: y}, {x: x, y: y}, {x: x, y: y}],
+                        angle: rand(0, 360), speed: rand(5, 15), alpha: rand(40, 100) / 100,
+                        hue: rand(hue - 30, hue + 30), brightness: rand(50, 80)
+                    });
+                }
+            };
+
+            self.updateParticles = function() {
+                for (var i = self.particles.length - 1; i >= 0; i--) {
+                    var p = self.particles[i];
+                    var radians = p.angle * Math.PI / 180;
+                    p.x += Math.cos(radians) * p.speed;
+                    p.y += Math.sin(radians) * p.speed;
+                    p.alpha -= 0.01;
+                    if (p.alpha <= 0.01) {
+                        self.particles.splice(i, 1);
+                    }
+                }
+            };
+
+            self.drawParticles = function() {
+                self.ctx.globalCompositeOperation = 'lighter';
+                self.ctx.lineWidth = 1;
+                for (var i = self.particles.length - 1; i >= 0; i--) {
+                    var p = self.particles[i];
+                    self.ctx.beginPath();
+                    self.ctx.moveTo(p.coordLast[0].x, p.coordLast[0].y);
+                    self.ctx.lineTo(p.x, p.y);
+                    self.ctx.strokeStyle = `hsla(${p.hue}, 100%, ${p.brightness}%, ${p.alpha})`;
+                    self.ctx.stroke();
+                }
+            };
+
+            self.bindEvents = function() {
+                $(self.canvas).on('mousedown', function(e) {
+                    self.mx = e.pageX;
+                    self.my = e.pageY;
+                    self.createFireworks(self.cw / 2, self.ch, self.mx, self.my);
+                });
+            };
+
+            self.createFireworks = function(startX, startY, targetX, targetY) {
+                self.fireworks.push({
+                    x: startX, y: startY, startX: startX, startY: startY,
+                    targetX: targetX, targetY: targetY, hue: rand(0, 360), brightness: rand(50, 80),
+                    alpha: rand(50, 100) / 100
+                });
+            };
+
+            self.updateFireworks = function() {
+                for (var i = self.fireworks.length - 1; i >= 0; i--) {
+                    var f = self.fireworks[i];
+                    f.x += (f.targetX - f.startX) * 0.02;
+                    f.y += (f.targetY - f.startY) * 0.02;
+                    if (Math.abs(f.x - f.targetX) < 1 && Math.abs(f.y - f.targetY) < 1) {
+                        self.createParticles(f.targetX, f.targetY, f.hue);
+                        self.fireworks.splice(i, 1);
+                    }
+                }
+            };
+
+            self.drawFireworks = function() {
+                for (var i = self.fireworks.length - 1; i >= 0; i--) {
+                    var f = self.fireworks[i];
+                    self.ctx.beginPath();
+                    self.ctx.moveTo(f.startX, f.startY);
+                    self.ctx.lineTo(f.x, f.y);
+                    self.ctx.strokeStyle = `hsla(${f.hue}, 100%, ${f.brightness}%, ${f.alpha})`;
+                    self.ctx.stroke();
+                }
+            };
+
+            self.canvasLoop = function() {
+                self.ctx.globalCompositeOperation = 'source-over';
+                self.ctx.fillStyle = "rgba(0,0,0,0.1)";
+                self.ctx.fillRect(0, 0, self.cw, self.ch);
+                self.updateFireworks();
+                self.drawFireworks();
+                self.updateParticles();
+                self.drawParticles();
+                requestAnimFrame(self.canvasLoop);
+            };
+
+            self.init();
+        };
+    </script>
+</body>
+</html>
