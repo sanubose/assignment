@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>make a form</title>
+    </head>
+    <body>
+        <h1>Contact Us</h1>
+         <form action="/submit-form" method="post">
+
+            <label for ="name">Name:</label><br>
+            <input type="text" id="name" placeholder="enter the name" required><br>
+
+            <label for ="email">Email:</label><br>
+            <input type="email" id="email" placeholder="enter the email" required><br>
+
+            <label for=" gendr">Gender:</label>
+            <select id="gendr" required>
+                <option value ="">Select</option>
+                <option value ="male" > Male</option>
+                <option value="female">Female</option>
+            </select>
+            <br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" placeholder="Write your message here..." required></textarea><br><br>
+
+
+            <button>Submit</button>
+            
+
+
+
+
+         </form>
+    </body>
+</html>
