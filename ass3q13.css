@@ -1,0 +1,11 @@
+#main-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #e6e6e6;
+  }
+  
+  p {
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+  }
+  
