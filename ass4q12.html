@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Specificity Experiment</title>
+  <style>
+
+    div {
+      background-color: rgb(211, 211, 211);
+    }
+
+     /* Class selector - applies yellow background color */
+    .highlight {
+      background-color: rgb(209, 193, 14);
+    }
+
+      /* ID selector - applies lightblue background color */
+    #special {
+      background-color: rgb(144, 167, 238);
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div class="highlight" id="special">
+    there are varoius type of selector as like Id selector , universal selector, group selctor, class selctor etc.
+  </div>
+
+</body>
+</html>
