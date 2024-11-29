@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM INTRO QUESTION</title>
+</head>
+<body>
+    <h1 id ="first">Hello Hero World!"</h1>
+
+   <p>I am Ironman</p>
+   <p>I am Batman</p>
+   <p>I am Superman</p>
+   <p>I am Spiderman</p>
+
+   <div class ="container">All above name of Dc and marval Comices Hero</div>
+    
+</body>
+</html>
+<script>
+    // change h1 tag's content in welcome to dom world
+     var  head = document.getElementById("first")
+     head.textContent ="Welcome to the DOM World!";
+
+     //all <p> tag color change in  blue
+
+    const para = document.getElementsByTagName("p");
+    for (let i =0; i<para.length; i++) {
+        console.log(para[i].textContent)
+      para[i].style.color = "blue";
+    }
+
+    //change bg color of <div> using queary
+
+    let box = document.querySelector(".container");
+    box.style.backgroundColor="yellow"
+    
+
+</script>
