@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+            margin: 0 10px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: red;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+        }
+
+        .main a {
+            font-size: 14px;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icons img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .poster {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .poster img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .box2{
+            display:grid;
+        }
+
+        .product-grid{
+            display: grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:20px
+
+        }
+
+        
+
+        .pc{
+            background:#fff ;
+            padding: 10px;
+            border: 1px solid;
+            border-radius:5px ;
+            text-align:center ;
+            position: relative;
+        }
+        .pc img{
+            width:100% ;
+            height:400px ;
+            object-fit:cover ;
+            margin: bottom 10px; 
+            border-radius:2px ;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Grid.</div>
+        <nav class="main">
+            <a href="#">SUMMER'24</a>
+            <a href="#">TOPWEAR</a>
+            <a href="#">BOTTOMWEAR</a>
+            <a href="#">SHOES & ACCESSORIES</a>
+            <a href="#">RESTOCKED</a>
+            <a href="#">THEMES</a>
+        </nav>
+        <div class="icons">
+            <img src="https://prod-img.thesouledstore.com/public/theSoul/storage/appIcons/ic_search@2x.png?format=webp&w=100&dpr=1.5" alt="Search Icon">
+            <img src="#" alt="Icon ">
+            <img src="#" alt="Icoon">
+            <img src="#" alt="Icon ">
+        </div>
+    </header>
+    <div class="poster">
+        <img src="https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Homepage_Banner__1_ycCzHWB.jpg?format=webp&w=1500&dpr=1.3" alt="Poster Image">
+    </div>
+
+    <div class="box2">
+        <div>
+            <h2>PRODUCTS</h2>
+            <input type="text" placeholder="Search of Products" class="search bar">
+            <ul class="product-list">
+                <li><input type="checkbox">Women Boyfriend Shirts</li>
+                <li><input type="checkbox">Women Bralette</li>
+                <li><input type="checkbox">Women Cargo Jeans</li>
+                <li><input type="checkbox">Women Cargo Joggers</li>
+                <li><input type="checkbox">Women Cropped Tops</li>
+                <li><input type="checkbox">Women Denim Jackets</li>
+                <li><input type="checkbox">Women Joggers</li>
+                <li><input type="checkbox">Women Oversized Cropped T-shirt</li>
+                <li><input type="checkbox">Women Oversized Shirt Dresses</li>
+
+            </ul>
+
+        </div> 
+        <div class="product-grid">
+            <div class="pc">
+                <img src="https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Solids-_Deep_Brown_dzIpJTH.jpg?format=webp&w=360&dpr=1.5" alt="">
+                
+            
+                <h4>white Bralette Top</h4>
+                <p class="price"><b>Rs.699</b>MRP incl. of all taxes</p>
+
+            </div>
+            <div class="pc">
+                <img src="https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Solids-_Hot_Pink.jpg?format=webp&w=360&dpr=1.5" alt="">
+                
+            
+                <h4>Cotton Linen:Lavender</h4>
+                <p class="price"><b>Rs.1399</b>MRP incl. of all taxes</p>
+
+            </div>
+            <div class="pc">
+                <img src="https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/14_ZzEaMwj_bVyYdBg.jpg?format=webp&w=360&dpr=1.5" alt="">
+                
+            
+                <h4>Korean Pants:Camel</h4>
+                <p class="price"><b>Rs.1999</b>MRP incl. of all taxes</p>
+
+            </div>
+            <div class="pc">
+                <img src="https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/5_1_PW1XlXe.jpg?format=webp&w=360&dpr=1.5" alt="">
+                
+            
+                <h4>PowerPuff Girls:Sugar & Spice</h4>
+                <p class="price"><b>Rs.999</b>MRP incl. of all taxes</p>
+
+            </div>
+
+            <div class ="box3">
+                <h1>Fresh From Bolg-></h1>
+                <div class="blog">
+                    <div class="bc">
+                        <img src="#" alt="">
+                        <div class="Bcontent">
+                            <h4>Shopping Guide</h4>
+                            <h2>9 comfy Throws for Cosy Autumn Vibe</h2>
+                            <p>Embrace the snuggling season with stylish throws that will warm your hearts</p>
+                        </div>
+
+                    </div>
+
+                    <div class="bc">
+                        <img src="#" alt="">
+                        <div class="Bcontent">
+                            <h4>Shopping Guide</h4>
+                            <h2>9 comfy Throws for Cosy Autumn Vibe</h2>
+                            <p>Embrace the snuggling season with stylish throws that will warm your hearts</p>
+                        </div>
+
+                    </div>
+
+                    <div class="bc">
+                        <img src="#" alt="">
+                        <div class="Bcontent">
+                            <h4>Shopping Guide</h4>
+                            <h2>9 comfy Throws for Cosy Autumn Vibe</h2>
+                            <p>Embrace the snuggling season with stylish throws that will warm your hearts</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>
